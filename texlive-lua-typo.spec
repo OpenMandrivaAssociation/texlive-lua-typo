@@ -1,6 +1,6 @@
 Name:		texlive-lua-typo
 Version:	59457
-Release:	1
+Release:	2
 Summary:	Highlighting typographical flaws with LuaLaTeX
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/lua-typo
