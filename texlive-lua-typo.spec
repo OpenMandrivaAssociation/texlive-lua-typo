@@ -1,5 +1,5 @@
 Name:		texlive-lua-typo
-Version:	68267
+Version:	69403
 Release:	1
 Summary:	Highlighting typographical flaws with LuaLaTeX
 Group:		Publishing
