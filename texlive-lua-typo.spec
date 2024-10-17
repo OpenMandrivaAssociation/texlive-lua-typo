@@ -3,7 +3,7 @@ Version:	70978
 Release:	1
 Summary:	Highlighting typographical flaws with LuaLaTeX
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/lua-typo
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/lua-typo
 License:	lppl1.3c
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/lua-typo.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/lua-typo.doc.r%{version}.tar.xz
