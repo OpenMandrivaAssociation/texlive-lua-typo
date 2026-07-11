@@ -1,43 +1,25 @@
-Name:		texlive-lua-typo
-Version:	70978
-Release:	1
+%global tl_name lua-typo
+%global tl_revision 77682
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	0.88
+Release:	%{tl_revision}.1
 Summary:	Highlighting typographical flaws with LuaLaTeX
 Group:		Publishing
-URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/lua-typo
+URL:		https://www.ctan.org/tex-archive/macros/luatex/latex/lua-typo
 License:	lppl1.3c
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/lua-typo.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/lua-typo.doc.r%{version}.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/lua-typo.source.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/lua-typo.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/lua-typo.doc.r%{tl_revision}.tar.xz
+Source2:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/lua-typo.source.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-This package tracks common typographic flaws in LuaLaTeX
-documents, especially widows, orphans, hyphenated words split
-over two pages, consecutive lines ending with hyphens,
-paragraphs ending on too short lines, etc. Customisable colours
-are used to highlight these flaws, and the list of pages on
-which typographical flaws were found is printed.
+Prints the list of pages on which typographical flaws were found (i.e.
+widows, orphans, hyphenated words split across two pages, consecutive
+lines ending with hyphens, paragraphs ending on too short or nearly full
+lines, homeoarchy, etc). Customisable colours are used to highlight
+these flaws.
 
-%prep
-%setup -c -a1 -a2
-%autopatch -p1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%doc %{_texmfdistdir}/source/lualatex/lua-typo
-%{_texmfdistdir}/tex/lualatex/lua-typo
-%doc %{_texmfdistdir}/doc/lualatex/lua-typo
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
